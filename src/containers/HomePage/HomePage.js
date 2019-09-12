@@ -1,4 +1,5 @@
-import Asteroid from '../Asteroid/Asteroid';
+import Asteroid from '../../components/Asteroid/Asteroid';
+import SpaceStationInfo from '../../components/SpaceStationInfo/SpaceStationInfo';
 import React, { Component } from 'react';
 import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
 import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
@@ -31,8 +32,9 @@ class HomePage extends Component {
     try {
       let formattedDate = new Date().toISOString().slice(0, 10);
       const asteroids = await fetchAsteroids(formattedDate)
-      this.props.addAsteroids(asteroids)
+      this.props.addAsteroids(asteroids.near_earth_objects[formattedDate])
     } catch (error) {
+      console.log("IN THE ERROR", error)
       this.props.addAsteroidsError(error.message)
     }
   }
@@ -40,11 +42,19 @@ class HomePage extends Component {
   render() {
 
     let asteroidsList;
-    
-    if (this.props.asteroids) {
-        asteroidsList = this.props.asteroids.map(asteroid => {
-        return <Asteroid />
-      });
+
+    if (this.props.asteroids.length) {
+      asteroidsList = this.props.asteroids.map(asteroid => {
+        return <Asteroid
+          key={asteroid.name}
+          name={asteroid.name}
+          minDiam={asteroid.estimated_diameter.miles.estimated_diameter_min.toFixed(3)}
+          maxDiam={asteroid.estimated_diameter.miles.estimated_diameter_max.toFixed(3)}
+          isHazardous={asteroid.is_potentially_hazardous_asteroid}
+        />
+      })
+    } else {
+      asteroidsList = <p>Getting asteroid info...</p>
     }
 
     return (
@@ -52,22 +62,20 @@ class HomePage extends Component {
         <h2>Today's astronomy picture of the day:</h2>
         {this.props.apodError && <p>{this.props.apodError}</p>}
         {this.props.APOD && <img src={this.props.APOD.url} alt='The astronomy picture of the day'/>}
-        <h2>Where is the International Space Station?</h2>
-        {this.props.issError && <p>{this.props.issError}</p>}
         <section>
           <h2>Asteroids near Earth today:</h2>
           {asteroidsList}
         </section>
-        <section>
-          {this.props.iss &&
-          <>
-            <h3>The ISS's current latitude is {this.props.iss.latitude}</h3>
-            <h3>The ISS's current longitude is {this.props.iss.longitude}</h3>
-            <h3>The ISS's current speed is {this.props.iss.velocity.toFixed(2)} miles per hour.</h3>
-            <h3>The ISS's current altitude is {this.props.iss.altitude.toFixed(2)} miles above Earth.</h3>
-          </>
-          }
-        </section>
+        <h2>Where is the International Space Station?</h2>
+        {this.props.issError && <p>{this.props.issError}</p>}
+        {this.props.iss && 
+          <SpaceStationInfo 
+            lat={this.props.iss.latitude}
+            long={this.props.iss.longitude}
+            velo={this.props.iss.velocity.toFixed(2)}
+            altitude={this.props.iss.altitude.toFixed(2)}
+          />
+        }
       </section>
     )
   }

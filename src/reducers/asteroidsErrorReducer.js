@@ -1,6 +1,6 @@
 export const asteroidsErrorReducer = (state = '', action) => {
   switch(action.type) {
-    case 'ADD_ASTEROIDS':
+    case 'ASTEROIDS_ERROR':
       return action.error;
     default:
       return state;
