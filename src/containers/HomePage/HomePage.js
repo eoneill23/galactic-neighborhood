@@ -1,6 +1,7 @@
+import Asteroid from '../Asteroid/Asteroid';
 import React, { Component } from 'react';
 import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
-import { addAPOD, addAPODError, addISS, addISSError } from '../../actions/index';
+import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
 import { connect } from "react-redux";
 import './HomePage.css';
 
@@ -36,8 +37,12 @@ class HomePage extends Component {
     }
   }
 
-
   render() {
+
+    let asteroidsList = this.props.asteroids.map(asteroid => {
+      return <Asteroid />
+    })
+
     return (
       <section>
         <h2>Today's astronomy picture of the day:</h2>
@@ -45,6 +50,9 @@ class HomePage extends Component {
         {this.props.APOD && <img src={this.props.APOD.url} alt='The astronomy picture of the day'/>}
         <h2>Where is the International Space Station?</h2>
         {this.props.issError && <p>{this.props.issError}</p>}
+        <section>
+
+        </section>
         <section>
           {this.props.iss &&
           <>
@@ -64,14 +72,18 @@ export const mapStateToProps = state => ({
   APOD: state.apod,
   apodError: state.apodError,
   iss: state.iss,
-  issError: state.issError
+  issError: state.issError,
+  asteroids: state.asteroids,
+  asteroidsError: state.asteroidsError
 });
 
 export const mapDispatchToProps = dispatch => ({
   addAPOD: APOD => dispatch(addAPOD(APOD)),
   addAPODError: error => dispatch(addAPODError(error)),
   addISS: ISS => dispatch(addISS(ISS)),
-  addISSError: error => dispatch(addISSError(error))
+  addISSError: error => dispatch(addISSError(error)),
+  addAsteroids: asteroids => dispatch(addAsteroids(asteroids)),
+  addAsteroidsError: error => dispatch(addAsteroidsError(error))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
