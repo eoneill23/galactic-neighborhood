@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { fetchAPOD } from '../../util/apiCalls';
-import './HomePage.css'
+import { addAPOD } from '../../actions/index';
+import { connect } from "react-redux";
+import './HomePage.css';
 
 class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-      APOD: null,
       error: ''
     }
   }
@@ -16,18 +17,27 @@ class HomePage extends Component {
     if (APOD.error) {
       this.setState({error: APOD.error})
     } else {
-      this.setState({APOD: APOD})
+      this.props.addAPOD(APOD)
     }
   }
 
 
   render() {
+    console.log(this.props)
     return (
       <>
-      {this.state.APOD && <img src={this.state.APOD.url} />}
+      {this.props.APOD && <img src={this.props.APOD.url} />}
       </>
     )
   }
 }
 
-export default HomePage;
+export const mapStateToProps = state => ({
+  APOD: state.apod,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  addAPOD: APOD => dispatch(addAPOD(APOD))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
