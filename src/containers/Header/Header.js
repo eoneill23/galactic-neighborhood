@@ -5,6 +5,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header className='header'>
+      <h1>Galactic Neighborhood</h1>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/mercury'>Mercury</NavLink>
       <NavLink to='/venus'>Venus</NavLink>
