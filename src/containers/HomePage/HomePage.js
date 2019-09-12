@@ -39,9 +39,13 @@ class HomePage extends Component {
 
   render() {
 
-    let asteroidsList = this.props.asteroids.map(asteroid => {
-      return <Asteroid />
-    })
+    let asteroidsList;
+    
+    if (this.props.asteroids) {
+        asteroidsList = this.props.asteroids.map(asteroid => {
+        return <Asteroid />
+      });
+    }
 
     return (
       <section>
@@ -51,7 +55,8 @@ class HomePage extends Component {
         <h2>Where is the International Space Station?</h2>
         {this.props.issError && <p>{this.props.issError}</p>}
         <section>
-
+          <h2>Asteroids near Earth today:</h2>
+          {asteroidsList}
         </section>
         <section>
           {this.props.iss &&
