@@ -58,24 +58,30 @@ class HomePage extends Component {
     }
 
     return (
-      <section>
-        <h2>Today's astronomy picture of the day:</h2>
-        {this.props.apodError && <p>{this.props.apodError}</p>}
-        {this.props.APOD && <img src={this.props.APOD.url} alt='The astronomy picture of the day'/>}
+      <section className='home-container'>
+        <div className='img-container'>
+          <h2>Today's astronomy picture of the day:</h2>
+          {this.props.apodError && <p>{this.props.apodError}</p>}
+          {this.props.APOD && <img src={this.props.APOD.url} className='apod' alt='The astronomy picture of the day'/>}
+        </div>
         <section>
           <h2>Asteroids near Earth today:</h2>
-          {asteroidsList}
+          <ul className='asteroids-list'>
+            {asteroidsList}
+          </ul>
         </section>
-        <h2>Where is the International Space Station?</h2>
-        {this.props.issError && <p>{this.props.issError}</p>}
-        {this.props.iss && 
-          <SpaceStationInfo 
-            lat={this.props.iss.latitude}
-            long={this.props.iss.longitude}
-            velo={this.props.iss.velocity.toFixed(2)}
-            altitude={this.props.iss.altitude.toFixed(2)}
-          />
-        }
+        <div className='iss-container'>
+          <h2>Where is the International Space Station?</h2>
+          {this.props.issError && <p>{this.props.issError}</p>}
+          {this.props.iss && 
+            <SpaceStationInfo 
+              lat={this.props.iss.latitude}
+              long={this.props.iss.longitude}
+              velo={this.props.iss.velocity.toFixed(2)}
+              altitude={this.props.iss.altitude.toFixed(2)}
+            />
+          }
+        </div>
       </section>
     )
   }

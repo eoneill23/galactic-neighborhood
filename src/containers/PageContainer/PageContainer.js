@@ -3,12 +3,13 @@ import './PageContainer.css';
 
 const PageContainer = ({ fact, imgUrl, factUrl, factSite }) => {
 
-
   return (
-    <section>
+    <section className='planet-container'>
       <img src={imgUrl} className='planet-img'/>
-      <p className='planet-fact'>{fact}</p>
-      <p>Fact courtesy of <a href={factUrl}>{factSite}</a></p>
+      <p className='planet-fact'>
+      {fact}
+        <p>Fact courtesy of <a href={factUrl} target='_blank'>{factSite}</a>.</p>
+      </p>
     </section>
   )
 }

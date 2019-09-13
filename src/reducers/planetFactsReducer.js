@@ -27,7 +27,7 @@ let defaultState = {
   'Saturn': {
     fact: 'There’s a field of ice and rock debris circling Saturn that from afar, appear as rings. Early telescope observations of the planet in the 1600s caused some confusion: does that planet have ears, or moons, or what? With better resolution, however, it soon became clear that there was a chain of small bodies encircling the gas giant. It’s possible that a single moon tore apart under Saturn’s strong gravity and produced the rings. Or, maybe they’ve been around (pun intended) for the last few billion years, unable to coalesce into a larger body but resistant enough to gravity not to break up.', 
     factUrl: 'https://www.universetoday.com/33415/interesting-facts-about-the-planets/',
-    imgUrl: 'https://www.jpl.nasa.gov/images/cassini/20160915/PIA21046-16.jpg'
+    imgUrl: 'https://photojournal.jpl.nasa.gov/jpeg/PIA01364.jpg'
   },
   'Uranus': {
     fact: 'When Voyager 2 flew by the planet in the 1980s, scientists saw a mostly featureless blue ball and some assumed there wasn’t much activity going on on Uranus. We’ve had a better look at the data since then that does show some interesting movement in the southern hemisphere. Additionally, the planet drew closer to the Sun in 2007, and in more recent years telescope probing has shown some storms going on. What is causing all this activity is difficult to say unless we were to send another probe that way. And unfortunately, there are no missions yet that are slated for sure to zoom out to that part of the Solar System.', 
@@ -42,7 +42,7 @@ let defaultState = {
   'Pluto': {
     fact: 'Pluto, once considered the ninth and most distant planet from the sun, is now the largest known dwarf planet in the solar system. It is also one of the largest known members of the Kuiper Belt, a shadowy zone beyond the orbit of Neptune thought to be populated by hundreds of thousands of rocky, icy bodies each larger than 62 miles (100 kilometers) across, along with 1 trillion or more comets.', 
     factUrl: 'https://www.space.com/43-pluto-the-ninth-planet-that-was-a-dwarf.html',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Global_LORRI_mosaic_of_Pluto_in_true_colour.jpg'
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Pluto_by_LORRI_and_Ralph%2C_13_July_2015.jpg'
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import './SpaceStationInfo.css';
 
 const SpaceStationInfo = ({ lat, long, velo, altitude }) => {
 
