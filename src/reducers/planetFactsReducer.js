@@ -7,7 +7,7 @@ let defaultState = {
   'Venus': {
     fact: 'Both Mercury and Venus have no moons, which can be considered a surprise given there are dozens of other ones around the Solar System. Saturn has over 60, for example. And some moons are little more than captured asteroids, which may have been what happened with Mars’ two moons, for example. So what makes these planets different? No one is really sure why Venus doesn’t, but there is at least one stream of research that suggests it could have had one in the past.', 
     factUrl: 'https://www.universetoday.com/33415/interesting-facts-about-the-planets/',
-    imgUrl: ''
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Venus_globe.jpg/480px-Venus_globe.jpg'
   },
   'Earth': {
     fact: 'We have a magnetic field surrounding our planet that protects us from the blasts of radiation and particles the Sun sends our way. Good thing, too, because such flare-ups could prove deadly to unprotected people; that’s why NASA keeps an eye on solar activity for astronauts on the International Space Station, for example. At any rate, when you see auroras shining in the sky, that’s what happens when the particles from the Sun flow along the magnetic field lines and interact with Earth’s upper atmosphere.',
@@ -17,7 +17,7 @@ let defaultState = {
   'Mars': {
     fact: 'What a bunch of contrasts in the inner Solar System: practically atmosphere-less Mercury, a runaway hothouse greenhouse effect happening in Venus’ thick atmosphere, temperate conditions on much of Earth and then a thin atmosphere on Mars. But look at the planet and you can see gullies carved in the past from probable water. Water requires more atmosphere, so Mars had more in the past. Where did it go? Some scientists believe it’s because the Sun’s energy pushed the lighter molecules out of Mars’ atmosphere over millions of years, decreasing the thickness over time.',
     factUrl: 'https://www.universetoday.com/33415/interesting-facts-about-the-planets/',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Venus_globe.jpg/480px-Venus_globe.jpg'
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/1024px-OSIRIS_Mars_true_color.jpg'
   },
   'Jupiter': {
     fact: 'The most massive planet in the Solar System probably had a huge influence on its history. At 318 times the mass of Earth, you can imagine that any passing asteroid or comet going near Jupiter has a big chance of being caught or diverted. Maybe Jupiter was partly to blame for the great bombardment of small bodies that peppered our young Solar System early in its history, causing scars you can still see on the Moon today. And in 1994, astronomers worldwide were treated to a rare sight: a comet, Shoemaker-Levy 9, breaking up under Jupiter’s gravity and slamming into the atmosphere.',
@@ -45,7 +45,6 @@ let defaultState = {
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Global_LORRI_mosaic_of_Pluto_in_true_colour.jpg'
   }
 }
-
 
 export const planetFactsReducer = (state = defaultState, action) => {
   switch(action.type) {

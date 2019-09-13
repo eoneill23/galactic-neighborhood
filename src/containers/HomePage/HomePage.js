@@ -3,7 +3,7 @@ import SpaceStationInfo from '../../components/SpaceStationInfo/SpaceStationInfo
 import React, { Component } from 'react';
 import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
 import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import './HomePage.css';
 
 class HomePage extends Component {
