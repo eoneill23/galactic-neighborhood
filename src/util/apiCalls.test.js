@@ -83,4 +83,39 @@ describe('fetchISS', () => {
       });
     });
   });
+
+  it('should call fetch with the correct Url', () => {
+    
+    fetchISS();
+
+    expect(window.fetch).toHaveBeenCalledWith('https://api.wheretheiss.at/v1/satellites/25544');
+  });
+
+  it('should return the correct iss object (HAPPY) :)', () => {
+
+    fetchISS()
+    .then(results => expect(results).toEqual(mockResponse))
+  });
+
+  it('should throw an error if the response ok status is false', () => {
+    
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+
+    expect(fetchISS()).rejects.toEqual(Error('There was an issue finding the ISS\'s location.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject({
+        message: 'There was an issue finding the ISS\'s location.'
+      });
+    });
+
+    expect(fetchISS()).rejects.toEqual({ message: 'There was an issue finding the ISS\'s location.' })
+  });
 });
