@@ -2,7 +2,7 @@ import React from 'react';
 
 const Asteroid = ({ name, minDiam, maxDiam, isHazardous }) => {
 
-  let hazardStatus = isHazardous ? '...Might be time to book that trip to Europe' : 'No.'
+  let hazardStatus = isHazardous ? '...Might be time to book that trip to Europe.' : 'No.'
 
   return (
     <article>

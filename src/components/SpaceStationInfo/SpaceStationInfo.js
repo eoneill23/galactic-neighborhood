@@ -6,8 +6,8 @@ const SpaceStationInfo = ({ lat, long, velo, altitude }) => {
     <section>
       <p>The ISS's current latitude is {lat}˚</p>
       <p>The ISS's current longitude is {long}˚</p>
-      <p>The ISS's current velocity is {velo}</p>
-      <p>the ISS's current altitude is {altitude}</p>
+      <p>The ISS is currently traveling at {velo} miles per hour.</p>
+      <p>the ISS is currently {altitude} miles above Earth.</p>
     </section>
   )
 }
