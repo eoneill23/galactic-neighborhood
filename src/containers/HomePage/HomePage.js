@@ -60,9 +60,11 @@ class HomePage extends Component {
     return (
       <section className='home-container'>
         <div className='img-container'>
-          <h2>Today's astronomy picture of the day:</h2>
+          <h2 className='img-header'>Today's astronomy picture of the day:</h2>
           {this.props.apodError && <p>{this.props.apodError}</p>}
           {this.props.APOD && <img src={this.props.APOD.url} className='apod' alt='The astronomy picture of the day'/>}
+          {this.props.APOD && <p className='img-caption'>{this.props.APOD.title}.</p>}
+          {this.props.APOD && this.props.APOD && <p className='img-copyright'>© {this.props.APOD.copyright} {this.props.APOD.date}</p>}
         </div>
         <section>
           <h2>Asteroids near Earth today:</h2>

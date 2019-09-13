@@ -4,8 +4,9 @@ import './Header.css';
 
 const Header = () => {
   return (
+    <>
+    <h1>Galactic Neighborhood</h1>
     <header className='header'>
-      <h1>Galactic Neighborhood</h1>
       <NavLink className='nav-link' to='/'>Home</NavLink>
       <NavLink className='nav-link' to='/mercury'>Mercury</NavLink>
       <NavLink className='nav-link' to='/venus'>Venus</NavLink>
@@ -17,6 +18,7 @@ const Header = () => {
       <NavLink className='nav-link' to='/neptune'>Neptune</NavLink>
       <NavLink className='nav-link' to='/pluto'>Pluto</NavLink>
     </header>
+    </>
   )
 }
 

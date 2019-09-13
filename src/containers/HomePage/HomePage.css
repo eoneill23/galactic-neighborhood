@@ -6,8 +6,12 @@
     'img' 'asteroids' 'iss'
     'img' 'asteroids' 'iss';
   grid-template-columns: 58% 18% 18%;
-  height: 550px;
+  height: 520px;
   padding: 30px;
+}
+
+.img-header {
+  margin-bottom: 10px;
 }
 
 .img-container {
@@ -32,6 +36,15 @@ h2 {
 }
 
 .apod {
-  height: 500px;
+  height: 400px;
   width: 100%;
+}
+
+.img-caption {
+  text-align: center;
+}
+
+.img-copyright {
+  font-size: .6em;
+  text-align: center;
 }

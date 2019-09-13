@@ -1,14 +1,17 @@
 .header {
+  align-items: center;
   background-color: black;
   border-bottom: 1px solid gray;
   display: flex;
   flex-direction: row;
-  height: 100px;
+  height: 80px;
+  justify-content: space-around;
 }
-
-
 
 h1 {
   color: white;
-  margin-top: 0;
+  background-color: black;
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
 }
