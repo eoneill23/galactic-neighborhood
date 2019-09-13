@@ -6,10 +6,10 @@ const PageContainer = ({ fact, imgUrl, factUrl, factSite }) => {
   return (
     <section className='planet-container'>
       <img src={imgUrl} className='planet-img'/>
-      <p className='planet-fact'>
+      <div className='planet-fact'>
       {fact}
         <p>Fact courtesy of <a href={factUrl} target='_blank'>{factSite}</a>.</p>
-      </p>
+      </div>
     </section>
   )
 }

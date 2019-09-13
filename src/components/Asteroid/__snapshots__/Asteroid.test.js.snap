@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Asteroid should match the snapshot with isHazardous set to false 1`] = `
+<article
+  className="asteroid-container"
+>
+  <p>
+    <span
+      className="name-span"
+    >
+      NAME:
+    </span>
+     
+    <span
+      className="name"
+    >
+      Big boy
+    </span>
+  </p>
+  <p>
+    <span
+      className="name"
+    >
+      Big boy
+    </span>
+     is estimated to be between 
+    0.002
+     & 
+    0.05
+     miles in diameter.
+  </p>
+  <p>
+    Is 
+    <span
+      className="name"
+    >
+      Big boy
+    </span>
+     hazardous? 
+    <span
+      className="non-hazardous"
+    >
+      No.
+    </span>
+  </p>
+</article>
+`;
+
+exports[`Asteroid should match the snapshot with isHazardous set to true 1`] = `
+<article
+  className="asteroid-container"
+>
+  <p>
+    <span
+      className="name-span"
+    >
+      NAME:
+    </span>
+     
+    <span
+      className="name"
+    >
+      Medium boy
+    </span>
+  </p>
+  <p>
+    <span
+      className="name"
+    >
+      Medium boy
+    </span>
+     is estimated to be between 
+    0.003
+     & 
+    0.07
+     miles in diameter.
+  </p>
+  <p>
+    Is 
+    <span
+      className="name"
+    >
+      Medium boy
+    </span>
+     hazardous? 
+    <span
+      className="hazardous"
+    >
+      It might be time to book that trip to Europe...
+    </span>
+  </p>
+</article>
+`;
