@@ -119,3 +119,72 @@ describe('fetchISS', () => {
     expect(fetchISS()).rejects.toEqual({ message: 'There was an issue finding the ISS\'s location.' })
   });
 });
+
+describe('fetchAsteroids', () => {
+  let mockResponse;
+
+  beforeEach(() => {
+    mockResponse = [
+      {
+        name: '(2008 DB)',
+        estimated_diameter: {
+          miles: {
+            estimated_diameter_min: 0.0119648141,
+            estimated_diameter_max: 0.0267541378
+          }
+        }
+      },
+      {
+        name: '(2010 RM82)',
+        estimated_diameter: {
+          miles: {
+            estimated_diameter_min: 0.0109120402,
+            estimated_diameter_max: 0.0244000636
+          }
+        }
+      }
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
+      })
+    })
+  });
+
+  it('should call fetch with the correct Url', () => {
+    
+    fetchAsteroids('2019-09-13');
+
+    expect(window.fetch).toHaveBeenCalledWith('https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-09-13&end_date=2019-09-13&api_key=wHuFmBqyaTjSnB17RczEl4c6yT5vnIVNDA0m4X1Q')
+  });
+
+  it('should return the correct array of asteroids (HAPPY) :)', () => {
+
+    fetchAsteroids()
+    .then(results => expect(results).toEqual(mockResponse));
+  });
+
+  it('should throw an error if the response.ok status is false', () => {
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+
+    expect(fetchAsteroids()).rejects.toEqual(Error('There was an issue getting asteroid information.'))
+  });
+
+  it('should return an error if the Promise rejects', () => {
+    
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject({
+        message: 'There was an issue getting asteroid information.'
+      });
+    });
+
+    expect(fetchAsteroids()).rejects.toEqual({ message: 'There was an issue getting asteroid information.' })
+  });
+});
