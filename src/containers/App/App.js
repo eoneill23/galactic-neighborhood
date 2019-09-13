@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import HomePage from '../HomePage/HomePage';
 import PageContainer from '../PageContainer/PageContainer';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <>
@@ -71,7 +71,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   planetFacts: state.planetFacts
 });
 

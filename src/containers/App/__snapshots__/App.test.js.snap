@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with all data passed in correctly 1`] = `
+<Fragment>
+  <Header />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/mercury"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/venus"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/earth"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/mars"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/jupiter"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/saturn"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/uranus"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/neptune"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/pluto"
+    render={[Function]}
+  />
+</Fragment>
+`;
