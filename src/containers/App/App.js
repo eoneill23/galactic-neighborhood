@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
-import Header from '../Header/Header';
+import Header from '../../components/MapContainer/Header/Header';
 import HomePage from '../HomePage/HomePage';
-import PageContainer from '../PageContainer/PageContainer';
+import PageContainer from '../../components/PageContainer/PageContainer';
 
 export class App extends Component {
   render() {
 
-    
     return (
       <>
       <Header />
