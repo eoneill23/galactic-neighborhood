@@ -22,12 +22,14 @@ class HomePage extends Component {
       this.props.addAPODError(error.message)
     }
 
-    try {
-      const ISS = await fetchISS()
-      this.props.addISS(ISS)
-    } catch (error) {
-      this.props.addISSError(error.message)
-    }
+    setInterval( async () => {
+      try {
+        const ISS = await fetchISS()
+        this.props.addISS(ISS)
+      } catch (error) {
+        this.props.addISSError(error.message)
+      }
+    }, 2000)
 
     try {
       let formattedDate = new Date().toISOString().slice(0, 10);
