@@ -1,4 +1,4 @@
-import { nasaKey, googleKey } from '../keys';
+import { nasaKey } from '../keys';
 
 export const fetchAPOD = async () => {
   const response = await fetch (
