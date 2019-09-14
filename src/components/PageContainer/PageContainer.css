@@ -8,7 +8,7 @@
 .planet-fact {
   background: gray;
   color: white;
-  height: 175px;
+  height: 250px;
   margin-top: 100px;
   padding: 10px;
   width: 60%;
@@ -17,4 +17,8 @@
 .planet-img {
   height: 500px;
   width: 500px;
+}
+
+.weight-entry {
+  width: 150px;
 }
