@@ -74,7 +74,7 @@ class HomePage extends Component {
           </ul>
         </section>
         <div className='iss-container'>
-          <h2>Where is the International Space Station?</h2>
+          <h2>International Space Station Information</h2>
           {this.props.issError && <p>{this.props.issError}</p>}
           {this.props.iss && 
             <>
@@ -84,6 +84,7 @@ class HomePage extends Component {
               velo={this.props.iss.velocity.toFixed(2)}
               altitude={this.props.iss.altitude.toFixed(2)}
             />
+            <h4 className='map-label'>ISS's current location:</h4>
             <MapContainer 
               lat={this.props.iss.latitude}
               long={this.props.iss.longitude}

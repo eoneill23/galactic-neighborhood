@@ -51,5 +51,11 @@ h2 {
 
 .map-container {
   height: 70px;
-  width: 70px;
+  width: 70px;  
+}
+
+.map-label {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
 }
