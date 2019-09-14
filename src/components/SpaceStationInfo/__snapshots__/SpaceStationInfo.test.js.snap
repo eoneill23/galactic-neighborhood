@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpaceStationInfo should match the snapshot with all data passed in correctly 1`] = `
+<section>
+  <p>
+    The ISS's current latitude is 
+    -12.306527427889
+    ˚
+  </p>
+  <p>
+    The ISS's current longitude is 
+    -124.16292183888
+    ˚
+  </p>
+  <p>
+    The ISS is currently traveling at 
+    27556.87
+     miles per hour.
+  </p>
+  <p>
+    The ISS is currently 
+    423.78
+     miles above Earth.
+  </p>
+</section>
+`;

@@ -4,18 +4,21 @@ import './Header.css';
 
 const Header = () => {
   return (
+    <>
+    <h1>Galactic Neighborhood</h1>
     <header className='header'>
-      <NavLink to='/'>Home</NavLink>
-      <NavLink to='/mercury'>Mercury</NavLink>
-      <NavLink to='/venus'>Venus</NavLink>
-      <NavLink to='/earth'>Earth</NavLink>
-      <NavLink to='/mars'>Mars</NavLink>
-      <NavLink to='/jupiter'>Jupiter</NavLink>
-      <NavLink to='/saturn'>Saturn</NavLink>
-      <NavLink to='/uranus'>Uranus</NavLink>
-      <NavLink to='/neptune'>Neptune</NavLink>
-      <NavLink to='/pluto'>Pluto</NavLink>
+      <NavLink className='nav-link' to='/'>Home</NavLink>
+      <NavLink className='nav-link' to='/mercury'>Mercury</NavLink>
+      <NavLink className='nav-link' to='/venus'>Venus</NavLink>
+      <NavLink className='nav-link' to='/earth'>Earth</NavLink>
+      <NavLink className='nav-link' to='/mars'>Mars</NavLink>
+      <NavLink className='nav-link' to='/jupiter'>Jupiter</NavLink>
+      <NavLink className='nav-link' to='/saturn'>Saturn</NavLink>
+      <NavLink className='nav-link' to='/uranus'>Uranus</NavLink>
+      <NavLink className='nav-link' to='/neptune'>Neptune</NavLink>
+      <NavLink className='nav-link' to='/pluto'>Pluto</NavLink>
     </header>
+    </>
   )
 }
 

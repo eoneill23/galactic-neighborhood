@@ -1,0 +1,16 @@
+.planet-container {
+  background-color: black;
+  display: flex;
+  height: 600px;
+}
+
+.planet-fact {
+  color: white;
+  padding: 10px;
+  width: 60%;
+}
+
+.planet-img {
+  height: 500px;
+  width: 500px;
+}

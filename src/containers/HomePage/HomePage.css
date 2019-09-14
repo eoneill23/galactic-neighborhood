@@ -1,0 +1,50 @@
+.home-container {
+  background-color: black;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    'img' 'asteroids' 'iss'
+    'img' 'asteroids' 'iss';
+  grid-template-columns: 58% 18% 18%;
+  height: 520px;
+  padding: 30px;
+}
+
+.img-header {
+  margin-bottom: 10px;
+}
+
+.img-container {
+  grid-area: 'img'
+}
+
+h2 {
+  color: white;
+  margin: 0;
+}
+
+.asteroids-list {
+  color: white;
+  grid-area: 'asteroids';
+  height: 430px;
+  overflow: scroll;
+  padding: 0;
+}
+
+.iss-container {
+  grid-area: 'iss';
+}
+
+.apod {
+  height: 400px;
+  width: 100%;
+}
+
+.img-caption {
+  text-align: center;
+}
+
+.img-copyright {
+  font-size: .6em;
+  text-align: center;
+}

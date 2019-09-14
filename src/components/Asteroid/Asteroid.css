@@ -1,0 +1,20 @@
+.asteroid-container {
+  border-bottom: 1px solid gray;
+}
+
+.name-span {
+  font-weight: bold;
+}
+
+.name {
+  color: yellow;
+}
+
+.hazardous {
+  color: red;
+}
+
+.non-hazardous {
+  color: green;
+}
+
