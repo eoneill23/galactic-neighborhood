@@ -27,3 +27,13 @@ export const addAsteroidsError = error => ({
   type: 'ASTEROIDS_ERROR',
   error
 });
+
+export const addCalculation = calculation => ({
+  type: 'ADD_CALCULATION',
+  calculation
+});
+
+export const resetStoreCalculation = number => ({
+  type: 'RESET_CALCULATION',
+  number
+});
