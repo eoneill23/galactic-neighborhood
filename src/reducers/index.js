@@ -6,6 +6,7 @@ import { issErrorReducer } from './issErrorReducer';
 import { asteroidsReducer } from './asteroidsReducer';
 import { asteroidsErrorReducer } from './asteroidsErrorReducer';
 import { planetFactsReducer } from './planetFactsReducer';
+import { calculationReducer } from './calculationReducer';
 
 const rootReducer = combineReducers({
   apod: apodReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   issError: issErrorReducer,
   asteroids: asteroidsReducer,
   asteroidsError: asteroidsErrorReducer,
-  planetFacts: planetFactsReducer
+  planetFacts: planetFactsReducer,
+  calculation: calculationReducer
 });
 
 export default rootReducer;
