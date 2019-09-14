@@ -6,7 +6,7 @@ const PageContainer = ({ fact, imgUrl, factUrl, factSite, multiplier, calculateW
 
   return (
     <section className='planet-container'>
-      <img src={imgUrl} className='planet-img'/>
+      <img src={imgUrl} alt={'Planet'} className='planet-img'/>
       <div className='planet-fact'>
         {fact}
         <p>Fact courtesy of <a href={factUrl} target='_blank'>{factSite}</a>.</p>

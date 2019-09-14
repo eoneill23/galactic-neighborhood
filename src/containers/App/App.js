@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addCalculation } from '../../actions/index';
 import './App.css';
-import Header from '../../components/MapContainer/Header/Header';
+import Header from '../Header/Header';
 import HomePage from '../HomePage/HomePage';
 import PageContainer from '../../components/PageContainer/PageContainer';
 

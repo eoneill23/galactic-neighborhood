@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { resetStoreCalculation } from '../../../actions/index';
+import { resetStoreCalculation } from '../../actions/index';
 import { connect } from 'react-redux';
 import './Header.css';
 
