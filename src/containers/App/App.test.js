@@ -87,4 +87,3 @@ describe('App', () => {
 //     expect(wrapper.find(HomePage)).toHaveLength(1);
 //   });
 // });
-
