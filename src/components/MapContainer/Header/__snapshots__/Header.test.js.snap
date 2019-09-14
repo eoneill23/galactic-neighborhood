@@ -9,60 +9,71 @@ exports[`Header should match the snapshot with all data passed in correctly 1`] 
     className="header"
   >
     <NavLink
+      activeClassName="active"
       className="nav-link"
+      exact={true}
       to="/"
     >
       Home
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/mercury"
     >
       Mercury
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/venus"
     >
       Venus
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/earth"
     >
       Earth
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/mars"
     >
       Mars
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/jupiter"
     >
       Jupiter
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/saturn"
     >
       Saturn
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/uranus"
     >
       Uranus
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/neptune"
     >
       Neptune
     </NavLink>
     <NavLink
+      activeClassName="active"
       className="nav-link"
       to="/pluto"
     >
