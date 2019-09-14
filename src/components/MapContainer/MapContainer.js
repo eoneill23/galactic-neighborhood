@@ -3,7 +3,7 @@ import { googleKey } from '../../keys';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  height: '200px',
+  height: '270px',
   width: '300px'
 };
 
