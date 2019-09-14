@@ -48,3 +48,8 @@ h2 {
   font-size: .6em;
   text-align: center;
 }
+
+.map-container {
+  height: 70px;
+  width: 70px;
+}

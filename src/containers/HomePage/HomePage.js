@@ -1,5 +1,6 @@
 import Asteroid from '../../components/Asteroid/Asteroid';
 import SpaceStationInfo from '../../components/SpaceStationInfo/SpaceStationInfo';
+import MapContainer from '../../components/MapContainer/MapContainer';
 import React, { Component } from 'react';
 import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
 import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
@@ -22,23 +23,21 @@ class HomePage extends Component {
       this.props.addAPODError(error.message)
     }
 
-    setInterval( async () => {
       try {
         const ISS = await fetchISS()
         this.props.addISS(ISS)
       } catch (error) {
         this.props.addISSError(error.message)
       }
-    }, 2000)
 
     try {
       let formattedDate = new Date().toISOString().slice(0, 10);
       const asteroids = await fetchAsteroids(formattedDate)
       this.props.addAsteroids(asteroids.near_earth_objects[formattedDate])
     } catch (error) {
-      console.log("IN THE ERROR", error)
       this.props.addAsteroidsError(error.message)
     }
+
   }
 
   render() {
@@ -78,12 +77,18 @@ class HomePage extends Component {
           <h2>Where is the International Space Station?</h2>
           {this.props.issError && <p>{this.props.issError}</p>}
           {this.props.iss && 
+            <>
             <SpaceStationInfo 
               lat={this.props.iss.latitude}
               long={this.props.iss.longitude}
               velo={this.props.iss.velocity.toFixed(2)}
               altitude={this.props.iss.altitude.toFixed(2)}
             />
+            <MapContainer 
+              lat={this.props.iss.latitude}
+              long={this.props.iss.longitude}
+            />
+            </>
           }
         </div>
       </section>
