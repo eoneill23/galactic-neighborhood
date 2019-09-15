@@ -6,6 +6,7 @@ import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
 import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
 import { connect } from 'react-redux';
 import './HomePage.css';
+import PropTypes from 'prop-types';
 
 export class HomePage extends Component {
 
@@ -110,3 +111,18 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+
+HomePage.propTypes = {
+  APOD: PropTypes.object,
+  apodError: PropTypes.string,
+  iss: PropTypes.object,
+  issError: PropTypes.string,
+  asteroids: PropTypes.array,
+  asteroidsError: PropTypes.string,
+  addAPOD: PropTypes.func,
+  addAPODError: PropTypes.func,
+  addISS: PropTypes.func,
+  addISSError: PropTypes.func,
+  addAsteroids: PropTypes.func,
+  addAsteroidsError: PropTypes.func
+}
