@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapContainer should match the snapshot with all data passed in correctly 1`] = `
+<Map
+  center={Object {}}
+  centerAroundCurrentLocation={false}
+  containerStyle={Object {}}
+  google={
+    Object {
+      "maps": Object {},
+    }
+  }
+  initialCenter={
+    Object {
+      "lat": 1,
+      "lng": 2,
+    }
+  }
+  style={
+    Object {
+      "height": "270px",
+      "width": "300px",
+    }
+  }
+  visible={true}
+  zoom={3}
+>
+  <Marker
+    name="Marker"
+    position={
+      Object {
+        "lat": 1,
+        "lng": 2,
+      }
+    }
+  />
+</Map>
+`;
