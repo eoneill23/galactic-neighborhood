@@ -91,5 +91,27 @@ describe('Actions', () => {
     expect(addAsteroidsError(error)).toEqual(expectedAction);
   });
 
-  
+  it('should have a type of ADD_CALCULATION', () => {
+
+    let calculation = 200;
+    
+    let expectedAction = {
+      type: 'ADD_CALCULATION',
+      calculation
+    }
+
+    expect(addCalculation(calculation)).toEqual(expectedAction);
+  });
+
+  it('should have a type of RESET_CALCULATION', () => {
+
+    let number = 0;
+
+    let expectedAction = {
+      type: 'RESET_CALCULATION',
+      number
+    }
+
+    expect(resetStoreCalculation(number)).toEqual(expectedAction);
+  });
 });
