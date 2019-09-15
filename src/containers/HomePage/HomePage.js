@@ -7,13 +7,7 @@ import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsE
 import { connect } from 'react-redux';
 import './HomePage.css';
 
-class HomePage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      error: ''
-    }
-  }
+export class HomePage extends Component {
 
   async componentDidMount() {
     try {
@@ -23,12 +17,12 @@ class HomePage extends Component {
       this.props.addAPODError(error.message)
     }
 
-      try {
-        const ISS = await fetchISS()
-        this.props.addISS(ISS)
-      } catch (error) {
-        this.props.addISSError(error.message)
-      }
+    try {
+      const ISS = await fetchISS()
+      this.props.addISS(ISS)
+    } catch (error) {
+      this.props.addISSError(error.message)
+    }
 
     try {
       let formattedDate = new Date().toISOString().slice(0, 10);
