@@ -41,7 +41,7 @@ export class WeightForm extends Component {
         >
           Submit
         </button>
-        {this.props.calculation > 0 && <p>Your weight on this planet would be: {this.props.calculation.toFixed(2)} pounds!</p>}
+        {this.props.calculation > 0 && <p>Your weight on this planet would be {this.props.calculation.toFixed(2)} pounds!</p>}
       </form>
     )
   }

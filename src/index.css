@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Space Mono', monospace;
+  font-size: .9em;
 }
 
 code {
