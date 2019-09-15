@@ -2,7 +2,7 @@ import React from 'react';
 import WeightForm from '../../containers/WeightForm/WeightForm';
 import './PageContainer.css';
 
-const PageContainer = ({ fact, imgUrl, factUrl, factSite, multiplier, calculateWeight }) => {
+export const PageContainer = ({ fact, imgUrl, factUrl, factSite, multiplier, calculateWeight }) => {
 
   return (
     <section className='planet-container'>
