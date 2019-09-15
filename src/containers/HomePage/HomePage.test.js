@@ -76,4 +76,41 @@ describe('HomePage', () => {
     expect(fetchISS).toHaveBeenCalled();
     expect(fetchAsteroids).toHaveBeenCalled();
   });
+
+  it('should call addAPODError if fetchAPOD rejects', () => {
+
+    fetchAPOD.mockImplementation(() => {
+      return Promise.reject({
+        message: 'Issue fetching APOD'
+      });
+    });
+
+    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching APOD');
+  });
+
+  it('should call addISSError if fetchISS rejects', () => {
+
+    fetchISS.mockImplementation(() => {
+      return Promise.reject({
+        message: 'Issue fetching Iss'
+      });
+    });
+
+    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching Iss');
+  });
+
+  it('should call addAsteroidsError if fetchAsteroidsRejects', () => {
+
+    fetchAsteroids.mockImplementation(() => {
+      return Promise.reject({
+        message: 'Issue fetching asteroids'
+      });
+    });
+
+    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching asteroids');
+  });
+
+  describe('mapStateToProps', () => {
+    
+  });
 });
