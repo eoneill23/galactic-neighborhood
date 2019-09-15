@@ -79,5 +79,17 @@ describe('Actions', () => {
     expect(addAsteroids(asteroids)).toEqual(expectedAction);
   });
 
+  it('should have a type of ASTEROIDS_ERROR', () => {
+
+    let error = 'Error fetching asteroids';
+
+    let expectedAction = {
+      type: 'ASTEROIDS_ERROR',
+      error
+    }
+
+    expect(addAsteroidsError(error)).toEqual(expectedAction);
+  });
+
   
 });
