@@ -57,4 +57,27 @@ describe('Actions', () => {
 
     expect(addISSError(error)).toEqual(expectedAction);
   });
+
+  it('should have a type of ADD_ASTEROIDS', () => {
+
+    let asteroids = [
+      {
+        name: 'asteroid1',
+        isHazardous: false
+      },
+      {
+        name: 'asteroid2',
+        isHazardous: true
+      }
+    ]
+
+    let expectedAction = {
+      type: 'ADD_ASTEROIDS',
+      asteroids
+    }
+
+    expect(addAsteroids(asteroids)).toEqual(expectedAction);
+  });
+
+  
 });
