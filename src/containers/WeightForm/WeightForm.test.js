@@ -42,6 +42,18 @@ describe('WeightForm', () => {
     expect(wrapper.instance().handleSubmit).toHaveBeenCalled();
   });
 
+  it('should pass in the state.number and multiplier when calculateWeight is called', () => {
+
+    const mockEvent = { preventDefault: jest.fn() }
+    wrapper.setState({number: 50});
+
+    wrapper.instance().handleSubmit = jest.fn();
+    wrapper.instance().forceUpdate();
+    wrapper.find('button').simulate('click', mockEvent);
+
+    expect(mockCalculateWeight).toHaveBeenCalledWith(50, 2);
+  });
+
   it('should clear the inputs when clearInputs is called', () => {
 
     wrapper.setState({number: 100});
