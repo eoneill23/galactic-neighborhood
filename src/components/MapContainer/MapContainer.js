@@ -10,7 +10,6 @@ const mapStyles = {
 export class MapContainer extends Component {
   
   render() {
-    console.log('PROPS', this.props)
     return (
       <Map
         google={this.props.google}

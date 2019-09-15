@@ -1,12 +1,14 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
-import { App, mapStateToProps } from './App';
+import { addCalculation } from '../../actions/index';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
 
 describe('App', () => {
-  let wrapper, mockPlanetFacts;
+  let wrapper, mockPlanetFacts, mockAddCalculation;
 
   beforeEach(() => {
+    mockAddCalculation = jest.fn();
     mockPlanetFacts = {
       'Mercury': {
         fact: 'The closest planet to the Sun does indeed have ice on its surface. That sounds surprising at first glance, but the ice is found in permanently shadowed craters — those that never receive any sunlight. It is thought that perhaps comets delivered this ice to Mercury in the first place. In fact, NASA’s MESSENGER spacecraft not only found ice at the north pole, but it also found organics, which are the building blocks for life. Mercury is way too hot and airless for life as we know it, but it shows how these elements are distributed across the Solar System.',
@@ -25,12 +27,19 @@ describe('App', () => {
       }
     }
 
-    wrapper = shallow(<App planetFacts={mockPlanetFacts} />)
+    wrapper = shallow(<App planetFacts={mockPlanetFacts} addCalculation={mockAddCalculation}/>)
   });
 
   it('should match the snapshot with all data passed in correctly', () => {
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call addCalculation with the correct calculation', () => {
+
+    wrapper.instance().calculateWeight(100, 2);
+
+    expect(mockAddCalculation).toHaveBeenCalledWith(200);
   });
 
   describe('mapStateToProps', () => {
@@ -72,6 +81,20 @@ describe('App', () => {
     expect(mapStateToProps(mockState).planetFacts).toEqual(expectedPlanetFacts);
   });
 
+  describe('mapDispatchToProps', () => {
+
+    it('should dispatch with a calculation when addCalculation is called', () => {
+
+      let mockCalculation = 200;
+      let mockDispatch = jest.fn();
+
+      let actionToDispatch = addCalculation(mockCalculation);
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addCalculation(mockCalculation);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+  });
 });
 
 // describe('Route', () => {
