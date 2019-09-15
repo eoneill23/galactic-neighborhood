@@ -1,5 +1,6 @@
 import React from 'react';
 import './SpaceStationInfo.css';
+import PropTypes from 'prop-types';
 
 const SpaceStationInfo = ({ velo, altitude }) => {
 
@@ -12,3 +13,8 @@ const SpaceStationInfo = ({ velo, altitude }) => {
 }
 
 export default SpaceStationInfo;
+
+SpaceStationInfo.propTypes = {
+  velo: PropTypes.string,
+  altitude: PropTypes.string
+}

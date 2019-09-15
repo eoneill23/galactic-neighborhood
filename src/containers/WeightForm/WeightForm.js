@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './WeightForm.css';
+import PropTypes from 'prop-types';
 
 export class WeightForm extends Component {
   constructor() {
@@ -51,3 +52,9 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(WeightForm);
+
+WeightForm.propTypes = {
+  calculation: PropTypes.number,
+  calculateWeight: PropTypes.func,
+  multiplier: PropTypes.number
+}

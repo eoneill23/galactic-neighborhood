@@ -6,6 +6,7 @@ import './App.css';
 import Header from '../Header/Header';
 import HomePage from '../HomePage/HomePage';
 import PageContainer from '../../components/PageContainer/PageContainer';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -106,3 +107,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  planetFacts: PropTypes.object,
+  addCalculation: PropTypes.func
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import WeightForm from '../../containers/WeightForm/WeightForm';
 import './PageContainer.css';
+import PropTypes from 'prop-types';
 
 export const PageContainer = ({ fact, imgUrl, factUrl, factSite, multiplier, calculateWeight }) => {
 
@@ -17,3 +18,12 @@ export const PageContainer = ({ fact, imgUrl, factUrl, factSite, multiplier, cal
 }
 
 export default PageContainer;
+
+PageContainer.propTypes = {
+  fact: PropTypes.string,
+  imgUrl: PropTypes.string,
+  factUrl: PropTypes.string,
+  factSite: PropTypes.string,
+  multiplier: PropTypes.number,
+  calculateWeight: PropTypes.func
+}

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { resetStoreCalculation } from '../../actions/index';
 import { connect } from 'react-redux';
 import './Header.css';
+import PropTypes from 'prop-types';
 
 export const Header = ({ resetStoreCalculation }) => {
 
@@ -32,3 +33,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(Header);
+
+Header.propTypes = {
+  resetStoreCalculation: PropTypes.func
+}

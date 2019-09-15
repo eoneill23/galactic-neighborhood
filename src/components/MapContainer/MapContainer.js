@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { googleKey } from '../../keys';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import PropTypes from 'prop-types';
 
 const mapStyles = {
   height: '270px',
@@ -10,7 +11,6 @@ const mapStyles = {
 export class MapContainer extends Component {
   
   render() {
-    console.log("MAPCONTAINER PROPS", this.props.google)
     return (
       <Map
         google={this.props.google}
@@ -26,4 +26,10 @@ export class MapContainer extends Component {
 
 export default GoogleApiWrapper({
   apiKey: googleKey
-})(MapContainer)
+})(MapContainer);
+
+MapContainer.propTypes = {
+  google: PropTypes.object,
+  lat: PropTypes.number,
+  long: PropTypes.number
+}
