@@ -155,7 +155,7 @@ describe('HomePage', () => {
       }
     });
 
-    it('should return an object with the APOD', () => {
+    it('should return an object with the correct parts of state', () => {
   
       let expected = {
         APOD: { title: 'APOD', url: 'google.com' },
@@ -197,6 +197,115 @@ describe('HomePage', () => {
   
       expect(mappedProps).toEqual(expected);
     });
+  });
 
+  describe('mapDispatchToProps', () => {
+    let mockDispatch;
+
+    beforeEach(() => {
+      mockDispatch = jest.fn();
+    });
+
+    it('should dispatch with an APOD when addAPOD is called', () => {
+
+      let mockAPOD = {
+        title: 'APOD', 
+        url: 'google.com'
+      }
+
+      let actionToDispatch = addAPOD(mockAPOD);
+
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addAPOD(mockAPOD);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should dispatch with an APODError when addAPODError is called', () => {
+
+      let mockAPODError = 'Issue fetching APOD'
+
+      let actionToDispatch = addAPODError(mockAPODError);
+
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addAPODError(mockAPODError);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should dispatch with an ISS when addISS is called', () => {
+
+      let mockISS = {
+        name: 'iss',
+        lat: 1,
+        lat: 2,
+        velocity: 3000,
+        altitude: 400
+      }
+
+      let actionToDispatch = addISS(mockISS);
+
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addISS(mockISS);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should dispatch with an ISSError when addISSError is called', () => {
+
+      let mockISSError = 'Error fetching ISS.'
+
+      let actionToDispatch = addISSError(mockISSError);
+
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addISSError(mockISSError);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should dispatch with asteroids when addAsteroids is called', () => {
+
+      let mockAsteroids = [
+        {
+          name: 'Asteroid 1',
+          estimated_diameter: {
+            miles: {
+              estimated_diameter_min: 2,
+              estimated_diameter_max: 3
+            }
+          },
+          isHazardous: false
+        },
+        {
+          name: 'Asteroid 1',
+          estimated_diameter: {
+            miles: {
+              estimated_diameter_min: 1,
+              estimated_diameter_max: 2
+            }
+          },
+          isHazardous: true
+        }
+      ]
+
+      let actionToDispatch = addAsteroids(mockAsteroids);
+
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addAsteroids(mockAsteroids);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should dispatch with an asteroidsError when addAsteroidsError is called', () => {
+
+      let mockAsteroidsError = 'Error fetching asteroids.';
+
+      let actionToDispatch = addAsteroidsError(mockAsteroidsError);
+      
+      let mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addAsteroidsError(mockAsteroidsError);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
   });
 });
