@@ -2,7 +2,9 @@
 
 exports[`WeightForm should match the snapshot with all data passed in correctly 1`] = `
 <form>
-  <p>
+  <p
+    className="calculation-label"
+  >
     What would your weight on this planet be? Enter your weight in the field below and click 'submit' to find out!
   </p>
   <input
