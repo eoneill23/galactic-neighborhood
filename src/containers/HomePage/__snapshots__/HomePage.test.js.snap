@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should match the snapshot with all data passed in correctly 1`] = `
+<section
+  className="home-container"
+>
+  <div
+    className="img-container"
+  >
+    <h2
+      className="img-header"
+    >
+      Today's astronomy picture of the day:
+    </h2>
+    <img
+      alt="The astronomy picture of the day"
+      className="apod"
+      src="google.com"
+    />
+    <p
+      className="img-caption"
+    >
+      APOD
+      .
+    </p>
+    <p
+      className="img-copyright"
+    >
+      © 
+       
+    </p>
+  </div>
+  <section>
+    <h2>
+      Asteroids near Earth today:
+    </h2>
+    <ul
+      className="asteroids-list"
+    >
+      <Asteroid
+        key="Asteroid 1"
+        maxDiam="3.000"
+        minDiam="2.000"
+        name="Asteroid 1"
+      />
+      <Asteroid
+        key="Asteroid 1"
+        maxDiam="2.000"
+        minDiam="1.000"
+        name="Asteroid 1"
+      />
+    </ul>
+  </section>
+  <div
+    className="iss-container"
+  >
+    <h2>
+      International Space Station Information
+    </h2>
+    <SpaceStationInfo
+      altitude="400.00"
+      velo="3000.00"
+    />
+    <h4
+      className="map-label"
+    >
+      ISS's current location:
+    </h4>
+    <Wrapper />
+  </div>
+</section>
+`;
