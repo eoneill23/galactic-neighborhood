@@ -111,6 +111,92 @@ describe('HomePage', () => {
   });
 
   describe('mapStateToProps', () => {
-    
+    let mockState;
+
+    beforeEach(() => {
+      mockState = {
+        apod: { title: 'APOD', url: 'google.com' },
+        apodError: '',
+        iss: {
+          name: 'iss',
+          lat: 1,
+          lat: 2,
+          velocity: 3000,
+          altitude: 400
+        },
+        issError: '',
+        asteroids: [
+          {
+            name: 'Asteroid 1',
+            estimated_diameter: {
+              miles: {
+                estimated_diameter_min: 2,
+                estimated_diameter_max: 3
+              }
+            },
+            isHazardous: false
+          },
+          {
+            name: 'Asteroid 1',
+            estimated_diameter: {
+              miles: {
+                estimated_diameter_min: 1,
+                estimated_diameter_max: 2
+              }
+            },
+            isHazardous: true
+          }
+        ],
+        asteroidsError: '',
+        planetFacts: {
+          'Mercury': {fact: 'closest to the sun', url: 'google.com'}
+        },
+        calculation: 100
+      }
+    });
+
+    it('should return an object with the APOD', () => {
+  
+      let expected = {
+        APOD: { title: 'APOD', url: 'google.com' },
+        apodError: '',
+        iss: {
+          name: 'iss',
+          lat: 1,
+          lat: 2,
+          velocity: 3000,
+          altitude: 400
+        },
+        issError: '',
+        asteroids: [
+          {
+            name: 'Asteroid 1',
+            estimated_diameter: {
+              miles: {
+                estimated_diameter_min: 2,
+                estimated_diameter_max: 3
+              }
+            },
+            isHazardous: false
+          },
+          {
+            name: 'Asteroid 1',
+            estimated_diameter: {
+              miles: {
+                estimated_diameter_min: 1,
+                estimated_diameter_max: 2
+              }
+            },
+            isHazardous: true
+          }
+        ],
+        asteroidsError: ''
+      };
+
+      let mappedProps = mapStateToProps(mockState);
+  
+      expect(mappedProps).toEqual(expected);
+    });
+
   });
 });
