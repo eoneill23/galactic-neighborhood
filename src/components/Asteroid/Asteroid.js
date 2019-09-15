@@ -1,5 +1,6 @@
 import React from 'react';
 import './Asteroid.css';
+import PropTypes from 'prop-types';
 
 const Asteroid = ({ name, minDiam, maxDiam, isHazardous }) => {
 
@@ -17,3 +18,10 @@ const Asteroid = ({ name, minDiam, maxDiam, isHazardous }) => {
 }
 
 export default Asteroid;
+
+Asteroid.propTypes = {
+  name: PropTypes.string,
+  minDiam: PropTypes.string,
+  maxDiam: PropTypes.string,
+  isHazardous: PropTypes.bool
+}
