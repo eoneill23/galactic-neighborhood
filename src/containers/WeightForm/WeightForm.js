@@ -28,7 +28,7 @@ export class WeightForm extends Component {
   render() {
     return (
       <form>
-        <p>What would your weight on this planet be? Enter your weight in the field below and click 'submit' to find out!</p>
+        <p className='calculation-label'>What would your weight on this planet be? Enter your weight in the field below and click 'submit' to find out!</p>
         <input
           type='number'
           placeholder='Enter your weight (lbs)'
