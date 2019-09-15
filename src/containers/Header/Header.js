@@ -4,7 +4,7 @@ import { resetStoreCalculation } from '../../actions/index';
 import { connect } from 'react-redux';
 import './Header.css';
 
-const Header = ({ resetStoreCalculation }) => {
+export const Header = ({ resetStoreCalculation }) => {
 
   const dispatchNumber = 0;
 
