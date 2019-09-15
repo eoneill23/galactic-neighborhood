@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeightForm should match the snapshot with all data passed in correctly 1`] = `
+<form>
+  <p>
+    What would your weight on this planet be? Enter your weight in the field below and click 'submit' to find out!
+  </p>
+  <input
+    name="number"
+    onChange={[Function]}
+    placeholder="Enter your weight (lbs)"
+    type="number"
+    value={0}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Submit
+  </button>
+  <p>
+    Your weight on this planet would be: 
+    100.00
+     pounds!
+  </p>
+</form>
+`;
