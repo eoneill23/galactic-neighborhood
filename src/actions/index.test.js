@@ -45,4 +45,16 @@ describe('Actions', () => {
 
     expect(addISS(ISS)).toEqual(expectedAction)
   });
+
+  it('should have a type of ISS_ERROR', () => {
+
+    let error = 'Error fetching ISS.'
+
+    let expectedAction = {
+      type: 'ISS_ERROR',
+      error
+    }
+
+    expect(addISSError(error)).toEqual(expectedAction);
+  });
 });
