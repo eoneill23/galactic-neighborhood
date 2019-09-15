@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './WeightForm.css';
 
-class WeightForm extends Component {
+export class WeightForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -46,7 +46,7 @@ class WeightForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   calculation: state.calculation
 });
 
