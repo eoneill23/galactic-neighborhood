@@ -20,7 +20,7 @@ exports[`WeightForm should match the snapshot with all data passed in correctly 
     Submit
   </button>
   <p>
-    Your weight on this planet would be: 
+    Your weight on this planet would be 
     100.00
      pounds!
   </p>
