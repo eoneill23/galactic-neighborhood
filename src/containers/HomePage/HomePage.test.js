@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { HomePage, mapStateToProps, mapDispatchToProps } from './HomePage';
 import { fetchAPOD, fetchISS, fetchAsteroids } from '../../util/apiCalls';
 import { addAPOD, addAPODError, addISS, addISSError, addAsteroids, addAsteroidsError } from '../../actions/index';
+import configureStore from 'redux-mock-store';
 
 jest.mock('../../util/apiCalls');
 
@@ -75,39 +76,6 @@ describe('HomePage', () => {
     expect(fetchAPOD).toHaveBeenCalled();
     expect(fetchISS).toHaveBeenCalled();
     expect(fetchAsteroids).toHaveBeenCalled();
-  });
-
-  it('should call addAPODError if fetchAPOD rejects', () => {
-
-    fetchAPOD.mockImplementation(() => {
-      return Promise.reject({
-        message: 'Issue fetching APOD'
-      });
-    });
-
-    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching APOD');
-  });
-
-  it('should call addISSError if fetchISS rejects', () => {
-
-    fetchISS.mockImplementation(() => {
-      return Promise.reject({
-        message: 'Issue fetching Iss'
-      });
-    });
-
-    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching Iss');
-  });
-
-  it('should call addAsteroidsError if fetchAsteroidsRejects', () => {
-
-    fetchAsteroids.mockImplementation(() => {
-      return Promise.reject({
-        message: 'Issue fetching asteroids'
-      });
-    });
-
-    expect(mockAddAPODError).tohaveBeenCalledWith('Issue fetching asteroids');
   });
 
   describe('mapStateToProps', () => {

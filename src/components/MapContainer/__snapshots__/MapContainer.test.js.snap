@@ -4,7 +4,13 @@ exports[`MapContainer should match the snapshot with all data passed in correctl
 <Map
   center={Object {}}
   centerAroundCurrentLocation={false}
-  containerStyle={Object {}}
+  containerStyle={
+    Object {
+      "height": "250px",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
   google={
     Object {
       "maps": Object {},
