@@ -22,3 +22,12 @@ Galactic Neighborhood is built with:
 * CSS
 
 ## Images
+
+### Home page
+![Home screenshot](./src/images/Galactic-Neighborhood-Homepage.png)
+
+### Planet page
+![Planet page screenshot](./src/images/Galactic-Neighborhood-Planet-page.png.png)
+
+### Planet page with weight calculation
+![Planet page screenshot with weight calculation](./src/images/Galactic-neighborhood-planet-page-calculation.png)
