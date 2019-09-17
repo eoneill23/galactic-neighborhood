@@ -8,9 +8,9 @@ The home page includes NASA's astronomy picture of the day (APOD), asteroids nea
 It was built as a six-day solo project.
 
 ## Getting started
-Clone down the repo and install the dependencies with `npm install`.
-Run `npm start` and visit http://localhost:3000 to view the application in the browser.
-Run the test suite with `npm test`.
+* Clone down the repo and install the dependencies with `npm install`.
+* Run `npm start` and visit http://localhost:3000 to view the application in the browser.
+* Run the test suite with `npm test`.
 
 ## Learning goals
 Hone skills in:
